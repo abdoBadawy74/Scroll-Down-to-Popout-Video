@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Scroll Down to Popout Video on Bottom</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="video">
+        <video src="video.mp4" type="video/mp4"
+          controls playsinline autoplay="off" poster="thumb.png">
+          </video>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Scroll Down to Popout Video on Bottom</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatem explicabo expedita maiores dicta non maxime, ad obcaecati nisi, quasi quae voluptatum. Officiis odio, eius recusandae sed pariatur maiores ab quos esse, hic perferendis libero, error enim amet. Velit molestias eius, harum, excepturi aliquid placeat quam reprehenderit recusandae totam libero, doloremque minus dolores repellendus. Recusandae praesentium, consequuntur inventore vel quidem ipsa eos, sed distinctio earum aut! Animi quas praesentium repudiandae, cumque voluptatibus rem qui impedit blanditiis consequuntur? Nisi architecto eius, culpa voluptates necessitatibus, blanditiis ea quidem earum molestiae natus ut delectus. Accusamus nam ab culpa sit possimus laboriosam, modi odit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae nam debitis illum exercitationem eos impedit odio non commodi repellendus harum vel reiciendis dignissimos, nisi nesciunt dolorem accusantium earum, fuga ullam. Dolores placeat repudiandae, ut quae. Tenetur possimus, eligendi labore earum saepe in hic, officia id repudiandae? Repellat cupiditate deserunt nesciunt ipsum asperiores officiis, repellendus deleniti tenetur voluptatibus necessitatibus atque quibusdam consequatur, vero officia alias quos recusandae. Distinctio quibusdam natus magni praesentium dolores, dicta ad! Deserunt tempora, nisi officia consectetur dignissimos vitae debitis cumque magni ex consequuntur sint excepturi unde beatae nihil, alias necessitatibus error in. Doloribus non quia nihil. Impedit.</p>
+      <h2>About Section</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quas rem cupiditate dolor, soluta voluptas quae officia eius aspernatur, minima, cum delectus deserunt aliquam vero hic nemo voluptatum doloremque! Soluta perspiciatis ab pariatur fugiat quos architecto optio mollitia a iusto provident, doloremque sunt saepe vero iste cum adipisci repellendus ipsam voluptatibus! Asperiores impedit maxime ipsa fugiat debitis, repellendus ut provident, iure quidem sapiente. Saepe eum natus quam suscipit, maxime explicabo impedit harum soluta dolorem. Molestias, at earum quae consequuntur veniam.</p>
+      <ul>
+        <li>Web Design</li>
+        <li>Graphic Design</li>
+        <li>Apps Developer</li>
+      </ul>
+      <h2>Services Section</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quas rem cupiditate dolor, soluta voluptas quae officia eius aspernatur, minima, cum delectus deserunt aliquam vero hic nemo voluptatum doloremque! Soluta perspiciatis ab pariatur fugiat quos architecto optio mollitia a iusto provident, doloremque sunt saepe vero iste cum adipisci repellendus ipsam voluptatibus! Asperiores impedit maxime ipsa fugiat debitis, repellendus ut provident, iure quidem sapiente. Saepe eum natus quam suscipit, maxime explicabo impedit harum soluta dolorem. Molestias, at earum quae consequuntur veniam.</p>
+      <ul>
+        <li>Web Design</li>
+        <li>Graphic Design</li>
+        <li>Apps Developer</li>
+      </ul>
+      <h2>Contact Section</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quas rem cupiditate dolor, soluta voluptas quae officia eius aspernatur, minima, cum delectus deserunt aliquam vero hic nemo voluptatum doloremque! Soluta perspiciatis ab pariatur fugiat quos architecto optio mollitia a iusto provident, doloremque sunt saepe vero iste cum adipisci repellendus ipsam voluptatibus! Asperiores impedit maxime ipsa fugiat debitis, repellendus ut provident, iure quidem sapiente. Saepe eum natus quam suscipit, maxime explicabo impedit harum soluta dolorem. Molestias, at earum quae consequuntur veniam.</p>
+      <ul>
+        <li>Web Design</li>
+        <li>Graphic Design</li>
+        <li>Apps Developer</li>
+      </ul>
+      <center>"You've reached bottom of the Page"</center>
+    </div>
+
+    <script>
+      const container = document.querySelector('.container');
+      const video = document.querySelector('.video');
+      let VideoHeight = video.offsetHeight;
+      let popOut = true;
+      container.style.height = VideoHeight + 'px';
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > VideoHeight){
+          if(popOut){
+            video.classList.add('popOut-bottom');
+            video.style.bottom = -VideoHeight + 'px';
+          }
+        }else{
+          video.classList.remove('popOut-bottom');
+          video.style.bottom = "0px";
+        }
+      });
+    </script>
+
+  </body>
+</html>
